@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simplilearn - Quiz</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Questions</h2>
+        <ol>
+            <li *ngFor="let question of questionsData.questions">
+                <h3>{{ question.question }}</h3>
+                <ol>
+                    <li *ngFor="let option of question.answers">
+                        <button value="{{option}}" (click)="optionSelected(option)">{{option}}</button>
+                    </li>
+                </ol>
+            </li>
+        </ol>
+
+        <!-- <button value="ClickToSeeAnswers" (click)="printSelectedAnswers()">ClickToSeeAnswers</button>
+        <hr>
+        <button value="ClickToSeeAnswers2" (click)="printAnswers()">ClickToSeeActualAnswers</button>
+        <hr> -->
+        <!-- <button value="ClickToSeeresult" (click)="compareAnswers()">ClickToSeeResult</button> -->
+        <button value="review" (click)="compareAnswers()" id="reviewButton">Review</button>
+    </div>
+    
+</body>
+</html>
